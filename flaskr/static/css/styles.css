@@ -1,0 +1,77 @@
+:root {
+  --primary-background: #121212;
+  --secondary-background: #292929;
+  --primary-color: #ffffff;
+  --secondary-color: #9c9c9c;
+
+
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+  max-width: 85%;
+  margin: auto;
+  height:100000px;
+}
+/* navbar */
+.nav-link {
+  color: #bdbdbd;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+.navbar {
+  background-color: var(--secondary-background);
+  padding: 1.25em;
+  margin: 0 auto;
+
+  /* border radius bottom */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
+}
+
+
+
+
+.header {
+  /* padding: 2em; */
+  height: calc(100vh - 4.5em);
+  
+}
+.header h1 {
+  font-size: 2.5em; /* Default size for smaller screens */
+  color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+  .header h1 {
+    font-size: 5.5em; /* Larger size for screens >= 992px */
+  }
+  .header p {
+    margin-left:0.75em;
+  }
+  .header img{
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.header p {
+  color: var(--secondary-color);
+  font-size: 1.52em;
+
+}
+
+.header img {
+  width: 200px;
+  height: 200px;
+}
+
+
+.header > .row{
+  /* margin-top: 0; */
+}
