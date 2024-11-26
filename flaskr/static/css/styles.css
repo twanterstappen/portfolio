@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
   max-width: 85%;
   margin: auto;
-  height:100000px;
+  /* height:100000px; */
 }
 /* navbar */
 .nav-link {
@@ -34,16 +34,73 @@ body {
   
 }
 
+.background {
+  position: fixed; /* Fix the background to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Full viewport height */
+  background: linear-gradient(
+    135deg,
+    rgba(40, 40, 40, 0.8) 0%,
+    rgba(20, 20, 20, 1) 50%,
+    rgba(10, 10, 10, 1) 100%
+  );
+  z-index: -1; /* Push behind content */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-size: cover; /* Ensure it covers the viewport */
+}
 
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  filter: blur(120px);
+  mix-blend-mode: overlay;
+  animation: float 8s infinite ease-in-out;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.blob1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 15%;
+}
+
+.blob2 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 10%;
+}
+
+.blob3 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
 
 
 .header {
   /* padding: 2em; */
   height: calc(100vh - 4.5em);
+  text-shadow: 2px 2px 10px #000000;
   
 }
 .header h1 {
-  font-size: 2.5em; /* Default size for smaller screens */
+  font-size: 2.6em; /* Default size for smaller screens */
   color: var(--primary-color);
 }
 
@@ -52,13 +109,14 @@ body {
     font-size: 5.5em; /* Larger size for screens >= 992px */
   }
   .header p {
-    margin-left:0.75em;
+    margin-left:0.82em;
   }
   .header img{
-    width: 400px;
-    height: 400px;
+    width: 1000px;
+    height: 1000px;
   }
 }
+
 
 .header p {
   color: var(--secondary-color);
@@ -67,11 +125,20 @@ body {
 }
 
 .header img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  box-shadow: 2px 2px 20px #000000;
 }
 
 
-.header > .row{
-  /* margin-top: 0; */
+.footer > .container{
+  background-color: var(--secondary-background);
+  padding: 1.25em;
+  /* margin: 0 auto; */
+
+  /* border radius bottom */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  box-shadow: 0 -0.2rem 1rem rgba(0, 0, 0, 0.24);
 }
