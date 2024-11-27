@@ -1,13 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Error {{ g.error_code }}{% endblock %}
+{% block title %}Error{% endblock %}
+
 {% block content %}
-<h1>Error</h1>
-{{ g.error }}
-{% if g.path %}
-<br><br>
-    You tried to access:
-    {{ g.path }}
-    <br>
-    Go back to <a href="/">home page</a>
-{% endif %}
+    <h1>Error</h1>
+    {{ g.error }}
+    {% if g.path %}
+    <br><br>
+        You tried to access:
+        {{ g.path }}
+        <br>
+        Go back to <a href="/">home page</a>
+    {% endif %}
+
 {% endblock %}

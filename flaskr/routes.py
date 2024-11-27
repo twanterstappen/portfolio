@@ -7,6 +7,14 @@ bp = Blueprint('routes', __name__)
 def home():
     return render_template('index.html')
 
+
+@bp.route('/<comingsoon>')
+def achievements(comingsoon):
+    return render_template('coming-soon.html')
+
+
+
+
 # @bp.route('/portfolio')
 # def portfolio():
 #     # Fetch all projects from the database
