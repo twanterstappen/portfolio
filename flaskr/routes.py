@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from models import db, Project, BlogPost  # Import database and models
+# from models import db, Project, BlogPost  # Import database and models
 
 bp = Blueprint('routes', __name__)
 

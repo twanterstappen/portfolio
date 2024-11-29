@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
 
     # Load global configuration from root config.py
-    config_type = os.getenv('FLASK_ENV', 'development').capitalize()
+    config_type = os.getenv('FLASK_ENV', 'production').capitalize()
     
     app.config.from_object(f'config.{config_type}Config')
 
@@ -50,7 +50,6 @@ if __name__ == "__main__":
         port = find_free_port(int(os.environ.get('PORT', 5000)))
 
         print(f"Starting server on port {port}...")
-        print(app.config["SECRET_KEY"])
     else:
         port = 5000
 

@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, request, g
 
-bp = Blueprint('error', __name__, url_prefix='/error')
+bp = Blueprint('error', __name__)
 
 # Catch remaining errors
 @bp.app_errorhandler(Exception)
