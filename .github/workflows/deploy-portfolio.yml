@@ -1,0 +1,39 @@
+name: Deploy Application
+
+on:
+  workflow_run:
+    workflows: ["Run Python Tests"]  # Trigger after the tests workflow
+    types:
+      - completed
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Only run if tests pass
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Deploy using SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          # Navigate to the application directory
+          cd /var/www/portfolio
+
+          # Pull the latest code from the repository
+          git pull origin main
+          
+          # Bring down the existing Docker environment
+          docker-compose down --rmi all --volumes --remove-orphans
+
+          # Rebuild and start the Docker containers
+          docker-compose up --build -d
+
+          # Verify the status of the containers
+          docker-compose ps
