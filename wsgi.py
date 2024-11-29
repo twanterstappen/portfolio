@@ -1,4 +1,5 @@
-from app import create_app
+#!/usr/bin/env python3
+from flaskr import create_app
 
 app = create_app()
 

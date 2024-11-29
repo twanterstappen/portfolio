@@ -1,7 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-# Initialize database instance (used in app.py)
-db = SQLAlchemy()
+from .extensions import db
 
 # Define Project model
 class Project(db.Model):

@@ -5,7 +5,7 @@ import datetime
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 INSTANCE_DIR = os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir, 'instance')))
-print
+
 
 
 class Config:
