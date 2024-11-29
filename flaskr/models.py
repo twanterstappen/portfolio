@@ -1,9 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
-
-# Initialize database instance (used in app.py)
-db = SQLAlchemy()
+from .extensions import db
 
 # Define Project model
+
+
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -14,6 +13,8 @@ class Project(db.Model):
         return f"<Project {self.title}>"
 
 # Define BlogPost model
+
+
 class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)

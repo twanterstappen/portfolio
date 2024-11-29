@@ -3,21 +3,32 @@ version: '3.8'
 services:
   app:
     build: 
-      context: .
-      dockerfile: Dockerfile-flask
+      context: ./  # Build context for Flask app
+      dockerfile: ./docker/Dockerfile-flask
     container_name: flask_app
     expose:
-      - "5000"
+      - "5000"  # Expose the Flask app port for internal communication
     restart: always
-    
+    networks:
+      - app-network  # Connect to the shared network
+    environment:
+      - FLASK_ENV=production  # Pass environment variable to Flask app
+
   nginx:
     build: 
-      context: .
-      dockerfile: Dockerfile-nginx
+      context: ./  # Build context for NGINX
+      dockerfile: ./docker/Dockerfile-nginx
     container_name: nginx_proxy
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80"  # Public HTTP port
+      - "443:443"  # Public HTTPS port
     depends_on:
-      - app
+      - app  # Ensure the Flask app starts first
     restart: always
+    networks:
+      - app-network  # Connect to the shared network
+
+# Define the shared network
+networks:
+  app-network:
+    driver: bridge  # Default Docker bridge network

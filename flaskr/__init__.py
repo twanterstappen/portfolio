@@ -1,7 +1,9 @@
-from flask import Flask
-from models import db
+#!/usr/bin/env python3
+
 import os
-import error, routes  # Import blueprints
+from flask import Flask
+from .extensions import db
+from .routes import main, error
 from werkzeug.serving import is_running_from_reloader
 
 
@@ -10,8 +12,8 @@ def create_app():
 
     # Load global configuration from root config.py
     config_type = os.getenv('FLASK_ENV', 'production').capitalize()
-    
-    app.config.from_object(f'config.{config_type}Config')
+
+    app.config.from_object(f'flaskr.config.{config_type}Config')
 
     # Optionally load environment-specific overrides from instance/config.py
     app.config.from_pyfile('env.py', silent=True)
@@ -19,17 +21,15 @@ def create_app():
     # Initialize database
     db.init_app(app)
 
-    # Register blueprints
-    app.register_blueprint(routes.bp)
-    app.register_blueprint(error.bp)
-
-    # Initialize the database tables
+    # Initialize the database tables if there is no database file
     with app.app_context():
         db.create_all()
 
+    # Register blueprints
+    app.register_blueprint(main.bp)
+    app.register_blueprint(error.bp)
+
     return app
-
-
 
 
 if __name__ == "__main__":
@@ -53,4 +53,5 @@ if __name__ == "__main__":
     else:
         port = 5000
 
-    app.run(debug=app.config['DEBUG'], host='0.0.0.0', port=port, use_reloader=app.config['USER_RELOAD'])
+    app.run(debug=app.config['DEBUG'], host='0.0.0.0',
+            port=port, use_reloader=app.config['USER_RELOAD'])
