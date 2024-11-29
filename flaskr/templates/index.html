@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+
+<header class="container header d-flex align-items-center justify-content-center" style="margin-top: -3rem;">
+    <div class="row w-100 d-flex align-items-stretch justify-content-center flex-wrap mb-3">
+        <div class="col-lg-7 col-12  d-flex flex-column justify-content-center align-items-lg-start align-items-center">
+            <h1 class="">Twan Terstappen</h1>
+            <p style="margin-top:-10px;">Ethical Hacker</p>
+        </div>
+        <div class="col-lg-5 col-12  d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" alt="Profile"
+                class="img-fluid rounded-circle" style="object-fit: cover;" />
+        </div>
+    </div>
+</header>
+{% endblock %}

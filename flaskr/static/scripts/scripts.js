@@ -1,0 +1,1 @@
+// Javascript for the front-end of the application

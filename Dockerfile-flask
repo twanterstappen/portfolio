@@ -1,0 +1,31 @@
+# Step 1: Use an official Python image as the base
+FROM python:3.12-slim
+
+# Step 2: Set environment variables for Python
+ENV PYTHONDONTWRITEBYTECODE 1  # Prevent Python from writing pyc files
+ENV PYTHONUNBUFFERED 1        # Prevent buffering in Python logs
+
+# Step 3: Set the working directory in the container
+WORKDIR /app
+
+# Step 4: Copy the application code
+COPY ./flaskr /app
+
+COPY ./instance /instance
+
+# Step 5: Copy the requirements.txt file
+COPY ./requirements.txt /app
+
+# Step 6: Install system dependencies
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y \
+    libpq-dev gcc \
+    && apt-get clean
+
+# Step 7: Install Python dependencies
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+
+# Step 8: Run Gunicorn as the WSGI server
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "wsgi:app"]
+
