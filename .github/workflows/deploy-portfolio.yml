@@ -30,10 +30,10 @@ jobs:
           git pull origin main
           
           # Bring down the existing Docker environment
-          docker-compose down --rmi all --volumes --remove-orphans
+          sudo docker compose down --rmi all --volumes --remove-orphans
 
           # Rebuild and start the Docker containers
-          docker-compose up --build -d
+          sudo docker compose up --build -d
 
           # Verify the status of the containers
-          docker-compose ps
+          sudo docker compose ps
