@@ -28,19 +28,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link {% if g.current_route == '/' %}text-white active{% endif %}" href="/"><b>Home</b></a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="achievements">Achievements</a>
+                        <a class="nav-link {% if g.current_route == '/achievements' %}text-white active{% endif %}" href="achievements"><b>Achievements</b></a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="blogs">Blogs</a>
+                        <a class="nav-link {% if g.current_route == '/blogs' %}text-white active{% endif %}" href="blogs"><b>Blogs</b></a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="projects">Projects</a>
+                        <a class="nav-link {% if g.current_route == '/projects' %}text-white active{% endif %}" href="projects"><b>Projects</b></a>
                     </li>
                     <li class="nav-item mx-3" style="margin-right: -2em !important;">
-                        <a class="nav-link" href="get-in-touch">Get In Touch</a>
+                        <a class="nav-link {% if g.current_route == '/get-in-touch' %}text-white active{% endif %}" href="get-in-touch"><b>Get In Touch</b></a>
                     </li>
                 </ul>
             </div>
