@@ -20,6 +20,6 @@ jobs:
       - name: Check status code of website
         uses: pavelsaman/website-check@v2.3
         with:
-          sites: ${{ secrets.WEBSITE_NAME }}
+          url: ${{ secrets.WEBSITE_NAME }}
           status_code: 200
           redirect: true
