@@ -1,16 +1,16 @@
-name: Run Python Tests for Main Branch
+name: Quick Testing
 
 on:
   push:
-    branches:
-      - main  # Only trigger on new commits to main
+    branches-ignore:
+      - main  # Ignore pushes to main, run on all other branches
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.11', '3.10', '3.9']
+        python-version: ['3.11']  # Only test on Python 3.11
 
     steps:
     - name: Check out code

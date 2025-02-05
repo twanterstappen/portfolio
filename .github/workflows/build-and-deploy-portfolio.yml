@@ -1,8 +1,8 @@
-name: Deploy Application
+name: Build and Deploy
 
 on:
   workflow_run:
-    workflows: ["Run Python Tests for Main Branch"]  # Only trigger after 'Run Python Tests for Main Branch'
+    workflows: ["Testing"]  # Only trigger after 'Run Python Tests for Main Branch'
     types:
       - completed
 
