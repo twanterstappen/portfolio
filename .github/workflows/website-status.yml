@@ -20,5 +20,5 @@ jobs:
       - name: Check Website Status
         uses: lakuapik/gh-actions-http-status@v1
         with:
-          url: ${{ secrets.HOST }}
+          sites: '["${{ secrets.HOST }}",]'
           expected: '[200, 301, 302, 304]'
