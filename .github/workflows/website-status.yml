@@ -17,8 +17,9 @@ jobs:
       - name: Wait for deployment to settle
         run: sleep 60  # Give the server some time to restart
 
-      - name: Check Website Status
-        uses: lakuapik/gh-actions-http-status@v1
+      - name: Check status code of website
+        uses: pavelsaman/website-check@v2.3
         with:
-          sites: '["${{ secrets.HOST }}",]'
-          expected: '[200, 301, 302, 304]'
+          sites: ${{ secrets.WEBSITE_NAME }}
+          status_code: 200
+          redirect: true
