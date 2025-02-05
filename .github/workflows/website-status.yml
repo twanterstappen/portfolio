@@ -1,0 +1,24 @@
+name: Check Website Status
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  workflow_run:
+    workflows: ["Build and Deploy"]
+    types:
+      - completed
+
+jobs:
+  check-status:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for deployment to settle
+        run: sleep 60  # Give the server some time to restart
+
+      - name: Check Website Status
+        uses: lakuapik/gh-actions-http-status@v1
+        with:
+          url: ${{ secrets.HOST }}
+          expected: '[200, 301, 302, 304]'

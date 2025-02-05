@@ -1,5 +1,2 @@
-# portfolio
-Personal portfolio
+# Portfolio
 
-#! TODO
-https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow
