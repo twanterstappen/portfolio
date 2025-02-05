@@ -2,20 +2,42 @@
 {% block title %}Achievements{% endblock %}
 {% block content %}
 
-<section class="container">
-    <h1>My Achievements</h1>
-    <p>Here are some of the awards I have won in the past few years.</p>
-<div class="row w-100 d-flex align-items-stretch justify-content-center flex-wrap mb-3">
-    <div class="col-lg-6 col-12  d-flex flex-column justify-content-center align-items-lg-start align-items-center">
-        <img src="{{ url_for('static', filename='images/HALON-2023.jpg') }}" alt="HALON-2023 price for 'Most Vulnerabilities Found at Most Participating Organisations'" \
-        height="350px">
-    </div>
-    <div class="col-lg-6 col-12  d-flex flex-column align-items-center justify-content-center">
-        <img src="{{ url_for('static', filename='images/HALON-2024.jpg') }}" alt="HALON-2024 price for 'Most Vulnerabilities Found at Most Participating Organisations' and 'Most Advanced Verified Vulnerabilitie'" 
-        height="350px">
-    </div>
-</div>
+<section class="container my-5 achievements">
+    <h1 class="text-center fw-bold">My Achievements</h1>
+    <p class="text-center secondary">Here are some of my most notable achievements throughout my career</p>
 
+    <section class="halon">
+        <!-- HALON-2024 Achievement -->
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-12 text-lg-start text-center p-3">
+                <h3 class="fw-bold">HALON-2024 Award</h3>
+                <p class="secondary">
+                    Awarded for both <strong><i>'Finding the most verified vulnerabilities across most
+                            targets'</i></strong> and identifying the <strong><i>'Most advanced verified
+                            vulnerability'</i></strong>.
+                </p>
+            </div>
+            <div class="col-lg-6 col-12 text-center p-3">
+                <img src="{{ url_for('static', filename='images/HALON-2024.jpg') }}" alt="HALON-2024 award"
+                    class="img-fluid rounded-5">
+            </div>
+        </div>
 
+        <!-- HALON-2023 Achievement -->
+        <div class="row flex-lg-row-reverse align-items-center justify-content-center">
+            <div class="col-lg-6 col-12 text-lg-start text-center p-3">
+                <h3 class="fw-bold">HALON-2023 Award</h3>
+                <p class="secondary">
+                    Awareded for <strong><i>'Most Vulnerabilities Found at Most Participating
+                            Organisations'</i></strong>.
+                </p>
+            </div>
+            <div class="col-lg-6 col-12 text-center p-3">
+                <img src="{{ url_for('static', filename='images/HALON-2023.jpg') }}" alt="HALON-2023 award"
+                    class="img-fluid rounded-5">
+            </div>
+        </div>
+    </section>
 </section>
+
 {% endblock %}
