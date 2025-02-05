@@ -16,9 +16,9 @@ def home():
 def any(any):
     return redirect(url_for('main.coming_soon'), code=302)
 
-@bp.route('/blogs')
-def blogs():
-    return render_template('blogs/blogs.html')
+# @bp.route('/blogs')
+# def blogs():
+#     return render_template('blogs/blogs.html')
 
 @bp.route('/achievements')
 def achievements():
