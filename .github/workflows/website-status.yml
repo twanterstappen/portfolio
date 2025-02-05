@@ -1,14 +1,16 @@
 name: Check Website Status
 
 on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
   workflow_run:
-    workflows: ["Deploy Application"]
+    workflows: ["Build and Deploy"]
     types:
       - completed
 
 jobs:
   check-status:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
 
     steps:
