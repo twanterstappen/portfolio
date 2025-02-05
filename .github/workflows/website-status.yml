@@ -1,25 +1,26 @@
 name: Check Website Status
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
   workflow_run:
-    workflows: ["Build and Deploy"]
+    workflows: ["Deploy Application"]
     types:
       - completed
 
 jobs:
   check-status:
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Wait for deployment to settle
-        run: sleep 60  # Give the server some time to restart
+        run: sleep 30  # Optional: Give the server some time to restart
 
-      - name: Check status code of website
-        uses: pavelsaman/website-check@v2.3
-        with:
-          url: ${{ secrets.WEBSITE_NAME }}
-          status_code: 200
-          redirect: true
+      - name: Check Website Status
+        run: |
+          STATUS_CODE=$(curl -o /dev/null -s -w "%{http_code}" ${{ secrets.WEBSITE_NAME }})
+          if [ "$STATUS_CODE" -ne 200 ]; then
+            echo "Website is down! HTTP Status Code: $STATUS_CODE"
+            exit 1
+          else
+            echo "Website is online! HTTP Status Code: $STATUS_CODE"
+          fi
