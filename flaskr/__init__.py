@@ -4,6 +4,8 @@ import os
 from flask import Flask
 from .extensions import db
 from .routes import main, error
+from dotenv import load_dotenv
+load_dotenv()
 from werkzeug.serving import is_running_from_reloader
 
 
@@ -12,6 +14,7 @@ def create_app():
 
     # Load global configuration from root config.py
     config_type = os.getenv('FLASK_ENV', 'production').capitalize()
+    print(config_type)
 
     app.config.from_object(f'flaskr.config.{config_type}Config')
 

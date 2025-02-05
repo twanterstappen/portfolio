@@ -2,7 +2,7 @@ name: Deploy Application
 
 on:
   workflow_run:
-    workflows: ["Run Python Tests"]  # Trigger after the tests workflow
+    workflows: ["python-test-main.yml"]  # Only trigger after 'python-test-main.yml'
     types:
       - completed
 
