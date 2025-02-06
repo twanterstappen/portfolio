@@ -11,15 +11,13 @@ on:
 jobs:
   check-status:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Check HTTP Status
-      uses: trunkcode/check-http-status-action@v1.0.0
-      with:
-        skip200: true # recommended
-        # Either sitemap or urls is required. If defined both, then the
-        # sitemap is used and urls variable gets ignored.
-        urls: '[
-          "https://twanterstappen.nl/",
-          "https://github.com",
-          "http://example.com/"
-        ]'
+      - name: Wait for deployment to settle
+        run: sleep 60  # Give the server some time to restart
+
+      - name: Check Website Status
+        uses: pchalupa/site-health-check@v1
+        with:
+          url: 'https://github.com/'
