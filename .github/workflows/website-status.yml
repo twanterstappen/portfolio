@@ -11,10 +11,8 @@ on:
 jobs:
   check-status:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
-    name: HTTP Status
-    runs-on: ubuntu-latest
-
     steps:
+    - name: Check HTTP Status
       uses: trunkcode/check-http-status-action@v1.0.0
       with:
         skip200: true # recommended
