@@ -11,13 +11,17 @@ on:
 jobs:
   check-status:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
-    name: HTTP Status Check
+    name: HTTP Status
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check HTTP status
-      uses: gerdemann/http-status-code@1.0.0
+      uses: trunkcode/check-http-status-action@v1.0.0
       with:
-        url: https://twanterstappen.nl
-        timeout: 60 # optional
-        interval: 10 # optional
+        skip200: true # recommended
+        # Either sitemap or urls is required. If defined both, then the
+        # sitemap is used and urls variable gets ignored.
+        urls: '[
+          "https://twanterstappen.nl/",
+          "https://github.com",
+          "http://example.com/"
+        ]'
