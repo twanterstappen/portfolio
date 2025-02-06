@@ -10,7 +10,7 @@ on:
 
 jobs:
   check-status:
-    # if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule' }}
     # runs-on: ubuntu-latest
 
   steps:
