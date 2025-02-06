@@ -18,6 +18,6 @@ jobs:
     - name: Check HTTP status
       uses: gerdemann/http-status-code@1.0.0
       with:
-        url: ${{ secrets.WEBSITE_NAME }}
+        url: https://twanterstappen.nl
         timeout: 60 # optional
         interval: 10 # optional
