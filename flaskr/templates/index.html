@@ -2,16 +2,80 @@
 {% block title %}Portfolio{% endblock %}
 {% block content %}
 
-<header class="container header d-flex align-items-center justify-content-center" style="margin-top: -8rem;">
-    <div class="row w-100 d-flex align-items-stretch justify-content-center flex-wrap mb-3">
-        <div class="col-lg-7 col-12  d-flex flex-column justify-content-center align-items-lg-start align-items-center">
-            <h1 class="">Twan Terstappen</h1>
-            <p style="margin-top:-10px;">Ethical Hacker</p>
-        </div>
-        <div class="col-lg-5 col-12  d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" alt="Profile"
-                class="img-fluid rounded-circle" style="object-fit: cover;" />
+<header class="header">
+    <div class="container">
+        <div class="hero-content fade-in-up">
+            <div class="hero-text">
+                <h1 class="hero-title">Twan Terstappen</h1>
+                <p class="hero-subtitle">Ethical Hacker & Cybersecurity Expert</p>
+                <p class="hero-description">
+                    Passionate about discovering vulnerabilities and strengthening digital security. 
+                    Award-winning penetration tester with expertise in advanced vulnerability assessment 
+                    and security research.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/achievements" class="btn-primary">
+                        <i class="fas fa-trophy"></i>
+                        View Achievements
+                    </a>
+                    <a href="/get-in-touch" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-background"></div>
+                <img src="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" 
+                     alt="Twan Terstappen - Ethical Hacker" 
+                     class="profile-image" />
+            </div>
         </div>
     </div>
 </header>
+
+<!-- Skills Section -->
+<section class="container">
+    <h2 class="section-title text-gradient">Core Expertise</h2>
+    <p class="section-subtitle">Areas where I excel in cybersecurity and ethical hacking</p>
+    
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card fade-in-up">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                        <i class="fas fa-bug" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 style="margin: 0; color: var(--text-primary);">Vulnerability Assessment</h4>
+                </div>
+                <p style="color: var(--text-secondary); margin: 0;">Identifying and analyzing security vulnerabilities across multiple platforms and systems.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="width: 50px; height: 50px; background: var(--gradient-accent); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                        <i class="fas fa-shield-alt" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 style="margin: 0; color: var(--text-primary);">Penetration Testing</h4>
+                </div>
+                <p style="color: var(--text-secondary); margin: 0;">Comprehensive security testing to identify weaknesses before malicious actors can exploit them.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card fade-in-up" style="animation-delay: 0.4s;">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                        <i class="fas fa-search" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 style="margin: 0; color: var(--text-primary);">Security Research</h4>
+                </div>
+                <p style="color: var(--text-secondary); margin: 0;">Research in emerging threats and innovative security methodologies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
