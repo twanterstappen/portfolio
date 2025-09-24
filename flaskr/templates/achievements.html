@@ -1,183 +1,210 @@
 {% extends "base.html" %}
+
 {% block title %}Achievements{% endblock %}
+
+{% block meta_description %}Twan Terstappen's cybersecurity achievements and awards. Winner of HALON 2023 and HALON 2024, recognized for excellence in ethical hacking and penetration testing.{% endblock %}
+
+{% block meta_keywords %}Twan Terstappen achievements, HALON winner, cybersecurity awards, ethical hacking competitions, penetration testing awards, security research recognition{% endblock %}
+
+{% block og_title %}Twan Terstappen - Cybersecurity Achievements & Awards{% endblock %}
+{% block og_description %}Recognition and achievements in cybersecurity including HALON 2023 and HALON 2024 wins, demonstrating expertise in ethical hacking and security research.{% endblock %}
+
+{% block twitter_title %}Twan Terstappen - Cybersecurity Achievements & Awards{% endblock %}
+{% block twitter_description %}Recognition and achievements in cybersecurity including HALON 2023 and HALON 2024 wins, demonstrating expertise in ethical hacking and security research.{% endblock %}
+
+<!-- Additional Structured Data for Achievements -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Twan Terstappen's Cybersecurity Achievements",
+    "description": "Awards and recognition in ethical hacking and cybersecurity",
+    "itemListElement": [
+        {
+            "@type": "Achievement",
+            "name": "ZeroDay Zoetermeer 2025",
+            "description": "Upcoming cybersecurity event participation",
+            "achiever": {
+                "@type": "Person",
+                "name": "Twan Terstappen"
+            }
+        },
+        {
+            "@type": "Achievement", 
+            "name": "HALON 2024 Winner",
+            "description": "Winner of HALON 2024 ethical hacking competition",
+            "achiever": {
+                "@type": "Person",
+                "name": "Twan Terstappen"
+            },
+            "dateCreated": "2024"
+        },
+        {
+            "@type": "Achievement",
+            "name": "HALON 2023 Winner", 
+            "description": "Winner of HALON 2023 ethical hacking competition",
+            "achiever": {
+                "@type": "Person",
+                "name": "Twan Terstappen"  
+            },
+            "dateCreated": "2023"
+        }
+    ]
+}
+</script>
+
 {% block content %}
 
-<section class="container achievements">
-    <h1 class="section-title text-gradient">My Achievements</h1>
-    <p class="section-subtitle">Recognition for excellence in cybersecurity and ethical hacking</p>
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-blue to-accent-cyan bg-clip-text text-transparent mb-4">My Achievements</h1>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto">Recognition for excellence in cybersecurity and ethical hacking</p>
+        </div>
 
-    <!-- ZeroDay Zoetermeer Achievement -->
-    <div class="achievement-card fade-in-up">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-1 order-2 mb-4 mb-lg-0">
-                <div class="achievement-content">
-                    <div class="d-flex align-items-center mb-3">
-                        <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                            <i class="fas fa-shield-alt" style="color: white; font-size: 1.8rem;"></i>
+        <!-- ZeroDay Zoetermeer Achievement -->
+        <div class="bg-card-bg rounded-2xl p-6 sm:p-8 lg:p-12 border border-border-color mb-12 animate-fade-in-up">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-1 order-2 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start mb-6">
+                        <div class="w-15 h-15 bg-gradient-to-r from-accent-green to-accent-cyan rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h3 style="margin: 0; color: var(--text-primary); font-weight: 700;">ZeroDay Zoetermeer 2025</h3>
-                            <p style="margin: 0; color: var(--accent-cyan); font-weight: 500;">First Place Winner</p>
+                            <h3 class="text-xl sm:text-2xl font-bold text-text-primary mb-1">ZeroDay Zoetermeer 2025</h3>
+                            <p class="text-accent-cyan font-semibold">First Place Winner</p>
                         </div>
                     </div>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    <p class="text-text-secondary text-base sm:text-lg leading-relaxed mb-6">
                         Won first place at ZeroDay Zoetermeer, a comprehensive penetration testing event organized by 
-                        <strong style="color: var(--accent-green);">Gemeente Zoetermeer</strong> and 
-                        <strong style="color: var(--accent-green);">The Hague University of Applied Sciences</strong>. 
+                        <strong class="text-accent-green">Gemeente Zoetermeer</strong> and 
+                        <strong class="text-accent-green">The Hague University of Applied Sciences</strong>. 
                         Our team successfully identified multiple vulnerabilities and delivered a detailed security assessment report.
                     </p>
-                    <div class="achievement-stats">
-                        <div class="row">
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);">2025</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">Competition Year</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">🥇</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">First Place</div>
-                                </div>
-                            </div>
+                    <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0">
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-cyan">2025</div>
+                            <div class="text-sm text-text-muted">Competition Year</div>
+                        </div>
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-green">🥇</div>
+                            <div class="text-sm text-text-muted">First Place</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/zeroday-zoetermeer-2025.jpeg') }}" 
-                     alt="ZeroDay Zoetermeer 2025 first place achievement" 
-                     class="achievement-image img-fluid">
+                <div class="lg:order-2 order-1 text-center">
+                    <img data-src="{{ url_for('static', filename='images/zeroday-zoetermeer-2025.jpeg') }}"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='Arial' font-size='18' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
+                         alt="ZeroDay Zoetermeer 2025 first place achievement" 
+                         class="w-full max-w-sm sm:max-w-md mx-auto rounded-xl shadow-2xl lazy"
+                         loading="lazy">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- HALON-2024 Achievement -->
-    <div class="achievement-card fade-in-up" style="animation-delay: 0.3s;">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-1 order-2 mb-4 mb-lg-0">
-                <div class="achievement-content">
-                    <div class="d-flex align-items-center mb-3">
-                        <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                            <i class="fas fa-trophy" style="color: white; font-size: 1.8rem;"></i>
+        <!-- HALON-2024 Achievement -->
+        <div class="bg-card-bg rounded-2xl p-6 sm:p-8 lg:p-12 border border-border-color mb-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-1 order-2 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start mb-6">
+                        <div class="w-15 h-15 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-trophy text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h3 style="margin: 0; color: var(--text-primary); font-weight: 700;">HALON-2024 Award</h3>
-                            <p style="margin: 0; color: var(--accent-cyan); font-weight: 500;">Double Achievement Winner</p>
+                            <h3 class="text-xl sm:text-2xl font-bold text-text-primary mb-1">HALON-2024 Award</h3>
+                            <p class="text-accent-cyan font-semibold">Double Achievement Winner</p>
                         </div>
                     </div>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        Awarded for both <strong style="color: var(--accent-green);">'Finding the most verified vulnerabilities across most targets'</strong> 
-                        and identifying the <strong style="color: var(--accent-green);">'Most advanced verified vulnerability'</strong>.
+                    <p class="text-text-secondary text-base sm:text-lg leading-relaxed mb-6">
+                        Awarded for both <strong class="text-accent-green">'Finding the most verified vulnerabilities across most targets'</strong> 
+                        and identifying the <strong class="text-accent-green">'Most advanced verified vulnerability'</strong>.
                     </p>
-                    <div class="achievement-stats">
-                        <div class="row">
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);">2024</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">Latest Achievement</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">2x</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">Awards Won</div>
-                                </div>
-                            </div>
+                    <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0">
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-cyan">2024</div>
+                            <div class="text-sm text-text-muted">Latest Achievement</div>
+                        </div>
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-green">2x</div>
+                            <div class="text-sm text-text-muted">Awards Won</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/HALON-2024.jpg') }}" 
-                     alt="HALON-2024 award certificate" 
-                     class="achievement-image img-fluid">
+                <div class="lg:order-2 order-1 text-center">
+                    <img data-src="{{ url_for('static', filename='images/HALON-2024.jpg') }}"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='Arial' font-size='18' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
+                         alt="HALON-2024 award certificate" 
+                         class="w-full max-w-sm sm:max-w-md mx-auto rounded-xl shadow-2xl lazy"
+                         loading="lazy">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- HALON-2023 Achievement -->
-    <div class="achievement-card fade-in-up" style="animation-delay: 0.6s;">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2 order-2 mb-4 mb-lg-0">
-                <div class="achievement-content">
-                    <div class="d-flex align-items-center mb-3">
-                        <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                            <i class="fas fa-award" style="color: white; font-size: 1.8rem;"></i>
+        <!-- HALON-2023 Achievement -->
+        <div class="bg-card-bg rounded-2xl p-6 sm:p-8 lg:p-12 border border-border-color mb-12 animate-fade-in-up" style="animation-delay: 0.6s;">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-2 order-2 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start mb-6">
+                        <div class="w-15 h-15 bg-gradient-to-r from-accent-green to-accent-cyan rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-award text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h3 style="margin: 0; color: var(--text-primary); font-weight: 700;">HALON-2023 Award</h3>
-                            <p style="margin: 0; color: var(--accent-cyan); font-weight: 500;">Top Performer Recognition</p>
+                            <h3 class="text-xl sm:text-2xl font-bold text-text-primary mb-1">HALON-2023 Award</h3>
+                            <p class="text-accent-cyan font-semibold">Top Performer Recognition</p>
                         </div>
                     </div>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                        Awarded for <strong style="color: var(--accent-green);">'Most Vulnerabilities Found at Most Participating Organisations'</strong>, 
+                    <p class="text-text-secondary text-base sm:text-lg leading-relaxed mb-6">
+                        Awarded for <strong class="text-accent-green">'Most Vulnerabilities Found at Most Participating Organisations'</strong>, 
                         demonstrating exceptional skill and dedication in security research.
                     </p>
-                    <div class="achievement-stats">
-                        <div class="row">
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);">2023</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">Achievement Year</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div style="text-align: center; padding: 1rem; background: var(--accent-dark); border-radius: var(--radius-small);">
-                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">#1</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);">Top Performer</div>
-                                </div>
-                            </div>
+                    <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0">
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-cyan">2023</div>
+                            <div class="text-sm text-text-muted">Achievement Year</div>
+                        </div>
+                        <div class="text-center p-4 bg-accent-dark rounded-xl">
+                            <div class="text-2xl font-bold text-accent-green">#1</div>
+                            <div class="text-sm text-text-muted">Top Performer</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 order-lg-1 order-1 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/HALON-2023.jpg') }}" 
-                     alt="HALON-2023 award certificate" 
-                     class="achievement-image img-fluid">
+                <div class="lg:order-1 order-1 text-center">
+                    <img data-src="{{ url_for('static', filename='images/HALON-2023.jpg') }}"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='Arial' font-size='18' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
+                         alt="HALON-2023 award certificate" 
+                         class="w-full max-w-sm sm:max-w-md mx-auto rounded-xl shadow-2xl lazy"
+                         loading="lazy">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Achievement Summary -->
-    <div class="row fade-in-up" style="animation-delay: 0.9s; margin-top: 3rem;">
-        <div class="col-12 mb-4">
-            <h3 style="color: var(--text-primary); text-align: center; margin-bottom: 2rem;">Achievement Impact</h3>
-        </div>
-        
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="text-center">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <i class="fas fa-calendar-alt" style="color: white; font-size: 1.5rem;"></i>
+        <!-- Achievement Summary -->
+        <div class="mt-16 animate-fade-in-up" style="animation-delay: 0.9s;">
+            <h3 class="text-3xl font-bold text-text-primary text-center mb-12">Achievement Impact</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-color text-center">
+                    <div class="w-15 h-15 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
                     </div>
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-blue); margin-bottom: 0.5rem;">2+</div>
-                    <div style="color: var(--text-secondary);">Years of Recognition</div>
+                    <div class="text-4xl font-bold text-primary-blue mb-2">2+</div>
+                    <div class="text-text-secondary">Years of Recognition</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="text-center">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <i class="fas fa-medal" style="color: white; font-size: 1.5rem;"></i>
+                
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-color text-center">
+                    <div class="w-15 h-15 bg-gradient-to-r from-accent-green to-accent-cyan rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-2xl"></i>
                     </div>
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-green); margin-bottom: 0.5rem;">4</div>
-                    <div style="color: var(--text-secondary);">Major Awards</div>
+                    <div class="text-4xl font-bold text-accent-green mb-2">4</div>
+                    <div class="text-text-secondary">Major Awards</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="text-center">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <i class="fas fa-bug" style="color: white; font-size: 1.5rem;"></i>
+                
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-color text-center">
+                    <div class="w-15 h-15 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bug text-white text-2xl"></i>
                     </div>
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 0.5rem;">50+</div>
-                    <div style="color: var(--text-secondary);">Vulnerabilities Found</div>
+                    <div class="text-4xl font-bold text-accent-cyan mb-2">50+</div>
+                    <div class="text-text-secondary">Vulnerabilities Found</div>
                 </div>
             </div>
         </div>

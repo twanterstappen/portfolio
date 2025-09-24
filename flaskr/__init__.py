@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import os
-from flask import Flask
+from flask import Flask, request
+from flask_compress import Compress
 from .extensions import db
 from .routes import main, error
 from dotenv import load_dotenv
@@ -20,6 +21,29 @@ def create_app():
 
     # Optionally load environment-specific overrides from instance/config.py
     app.config.from_pyfile('env.py', silent=True)
+    
+    # Performance optimizations
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  # 1 year for static files
+    
+    # Initialize Flask-Compress for gzip compression
+    Compress(app)
+    
+    # Add security headers for better performance and security
+    @app.after_request
+    def add_security_headers(response):
+        response.headers['X-Content-Type-Options'] = 'nosniff'
+        response.headers['X-Frame-Options'] = 'DENY'
+        response.headers['X-XSS-Protection'] = '1; mode=block'
+        
+        # Cache static files
+        if request.endpoint == 'static':
+            response.headers['Cache-Control'] = 'public, max-age=31536000'
+            response.headers['Expires'] = '31536000'
+        
+        # Enable compression
+        response.headers['Vary'] = 'Accept-Encoding'
+        
+        return response
 
     # Initialize database
     db.init_app(app)

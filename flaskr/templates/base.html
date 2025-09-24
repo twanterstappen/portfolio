@@ -6,14 +6,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="Twan Terstappen - Ethical Hacker and Cybersecurity Expert. Award-winning penetration tester specializing in vulnerability assessment and security research.">
-    <meta name="keywords" content="ethical hacking, cybersecurity, penetration testing, vulnerability assessment, security research">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Twan Terstappen - Ethical Hacker and Cybersecurity Expert. Award-winning penetration tester specializing in vulnerability assessment and security research.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}ethical hacking, cybersecurity, penetration testing, vulnerability assessment, security research, Twan Terstappen{% endblock %}">
     <meta name="author" content="Twan Terstappen">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.url }}">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="{% block og_title %}Twan Terstappen - {{ self.title() }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Twan Terstappen - Ethical Hacker and Cybersecurity Expert. Award-winning penetration tester specializing in vulnerability assessment and security research.{% endblock %}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/headshot-foto-Twan.jpg', _external=True) }}">
+    <meta property="og:site_name" content="Twan Terstappen Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.url }}">
+    <meta property="twitter:title" content="{% block twitter_title %}Twan Terstappen - {{ self.title() }}{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}Twan Terstappen - Ethical Hacker and Cybersecurity Expert. Award-winning penetration tester specializing in vulnerability assessment and security research.{% endblock %}">
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/headshot-foto-Twan.jpg', _external=True) }}">
+    <meta property="twitter:creator" content="@twanterstappen">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0066ff">
+    <meta name="msapplication-TileColor" content="#0066ff">
+    <meta name="application-name" content="Twan Terstappen Portfolio">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}" >
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Resource hints for critical images -->
+    <link rel="preload" href="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" as="image" type="image/jpeg">
+    <link rel="prefetch" href="{{ url_for('static', filename='images/HALON-2023.jpg') }}" as="image">
+    <link rel="prefetch" href="{{ url_for('static', filename='images/HALON-2024.jpg') }}" as="image">
+    
+    <!-- Load Tailwind CSS synchronously (required for proper styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS loaded after Tailwind -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Twan Terstappen",
+        "jobTitle": "Ethical Hacker & Cybersecurity Expert",
+        "description": "Award-winning penetration tester specializing in vulnerability assessment and security research",
+        "url": "{{ request.url_root }}",
+        "image": "{{ url_for('static', filename='images/headshot-foto-Twan.jpg', _external=True) }}",
+        "sameAs": [
+            "https://www.linkedin.com/in/twanterstappen/",
+            "https://github.com/twanterstappen"
+        ],
+        "knowsAbout": [
+            "Ethical Hacking",
+            "Cybersecurity",
+            "Penetration Testing",
+            "Vulnerability Assessment",
+            "Security Research",
+            "Information Security"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "HALON 2023 Winner"
+            },
+            {
+                "@type": "EducationalOccupationalCredential", 
+                "name": "HALON 2024 Winner"
+            }
+        ]
+    }
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0a0a0a',
+                        'secondary-dark': '#0f0f0f',
+                        'accent-dark': '#1a1a1a',
+                        'card-bg': '#141414',
+                        'border-color': '#2a2a2a',
+                        'primary-blue': '#0066ff',
+                        'secondary-blue': '#0052cc',
+                        'accent-cyan': '#00d4ff',
+                        'accent-green': '#00ff88',
+                        'accent-red': '#ff4757',
+                        'text-primary': '#ffffff',
+                        'text-secondary': '#a0a0a0',
+                        'text-muted': '#6a6a6a'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['Fira Code', 'monospace']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'blob': 'blob 7s infinite',
+                        'slide-down': 'slideDown 0.3s ease-out forwards',
+                        'slide-up': 'slideUp 0.3s ease-out forwards'
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)', opacity: '1' },
+                            '100%': { transform: 'translateY(-100%)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <title>Twan Terstappen - {% block title %}{% endblock %}</title>
 </head>
@@ -24,73 +148,100 @@
         <div class="blob blob3"></div>
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{{ url_for('static', filename='images/favicon/favicon-full-modified.png') }}" 
-                     alt="Twan Terstappen Logo" width="50px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link {% if g.current_route == '/' %}active{% endif %}" href="/">
-                            <i class="fas fa-home me-1"></i>Home
+    <nav class="fixed w-full top-0 z-50 bg-secondary-dark/80 backdrop-blur-md border-b border-border-color">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="{{ url_for('static', filename='images/favicon/favicon-full-modified.png') }}" 
+                             alt="Twan Terstappen Logo" class="w-12 h-12">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-text-primary hover:text-accent-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {% if g.current_route == '/' %}text-accent-cyan{% endif %}">
+                            <i class="fas fa-home mr-2"></i>Home
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if g.current_route == '/achievements' %}active{% endif %}" href="/achievements">
-                            <i class="fas fa-trophy me-1"></i>Achievements
+                        <a href="/achievements" class="text-text-primary hover:text-accent-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {% if g.current_route == '/achievements' %}text-accent-cyan{% endif %}">
+                            <i class="fas fa-trophy mr-2"></i>Achievements
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if g.current_route == '/blogs' %}active{% endif %}" href="/blogs">
-                            <i class="fas fa-blog me-1"></i>Blogs
+                        <a href="/blogs" class="text-text-primary hover:text-accent-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {% if g.current_route == '/blogs' %}text-accent-cyan{% endif %}">
+                            <i class="fas fa-blog mr-2"></i>Blogs
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if g.current_route == '/projects' %}active{% endif %}" href="/projects">
-                            <i class="fas fa-code me-1"></i>Projects
+                        <a href="/projects" class="text-text-primary hover:text-accent-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {% if g.current_route == '/projects' %}text-accent-cyan{% endif %}">
+                            <i class="fas fa-code mr-2"></i>Projects
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if g.current_route == '/get-in-touch' %}active{% endif %}" href="/get-in-touch">
-                            <i class="fas fa-envelope me-1"></i>Contact
+                        <a href="/get-in-touch" class="text-text-primary hover:text-accent-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {% if g.current_route == '/get-in-touch' %}text-accent-cyan{% endif %}">
+                            <i class="fas fa-envelope mr-2"></i>Contact
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="bg-secondary-dark inline-flex items-center justify-center p-2 rounded-md text-text-primary hover:text-accent-cyan hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-cyan" 
+                            aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0" id="mobile-menu">
+            <div class="px-4 pt-2 pb-3 space-y-1 bg-secondary-dark border-t border-border-color transform transition-all duration-300 ease-in-out opacity-0 translate-y-4">
+                <a href="/" class="text-text-primary hover:text-accent-cyan flex items-center justify-center px-3 py-3 rounded-md text-base font-medium transition-all duration-200 transform hover:scale-105 {% if g.current_route == '/' %}text-accent-cyan bg-accent-dark{% endif %}">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="/achievements" class="text-text-primary hover:text-accent-cyan flex items-center justify-center px-3 py-3 rounded-md text-base font-medium transition-all duration-200 transform hover:scale-105 {% if g.current_route == '/achievements' %}text-accent-cyan bg-accent-dark{% endif %}">
+                    <i class="fas fa-trophy mr-2"></i>Achievements
+                </a>
+                <a href="/blogs" class="text-text-primary hover:text-accent-cyan flex items-center justify-center px-3 py-3 rounded-md text-base font-medium transition-all duration-200 transform hover:scale-105 {% if g.current_route == '/blogs' %}text-accent-cyan bg-accent-dark{% endif %}">
+                    <i class="fas fa-blog mr-2"></i>Blogs
+                </a>
+                <a href="/projects" class="text-text-primary hover:text-accent-cyan flex items-center justify-center px-3 py-3 rounded-md text-base font-medium transition-all duration-200 transform hover:scale-105 {% if g.current_route == '/projects' %}text-accent-cyan bg-accent-dark{% endif %}">
+                    <i class="fas fa-code mr-2"></i>Projects
+                </a>
+                <a href="/get-in-touch" class="text-text-primary hover:text-accent-cyan flex items-center justify-center px-3 py-3 rounded-md text-base font-medium transition-all duration-200 transform hover:scale-105 {% if g.current_route == '/get-in-touch' %}text-accent-cyan bg-accent-dark{% endif %}">
+                    <i class="fas fa-envelope mr-2"></i>Contact
+                </a>
             </div>
         </div>
     </nav>
     
-    <main>
+    <main class="pt-16">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
+    <footer class="bg-secondary-dark border-t border-border-color mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex justify-center space-x-6 mb-8">
                 <!-- LinkedIn -->
                 <a href="https://linkedin.com/in/twanterstappen" target="_blank" rel="noopener noreferrer" 
-                   class="social-link" style="background-color: #0077b5;" 
+                   class="w-12 h-12 bg-[#0077b5] rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" 
                    aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin fa-lg"></i>
+                    <i class="fab fa-linkedin text-xl"></i>
                 </a>
                 
                 <!-- GitHub -->
                 <a href="https://github.com/twanterstappen" target="_blank" rel="noopener noreferrer" 
-                   class="social-link" style="background-color: #333;" 
+                   class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" 
                    aria-label="GitHub Profile">
-                    <i class="fab fa-github fa-lg"></i>
+                    <i class="fab fa-github text-xl"></i>
                 </a>
                 
                 <!-- Hack The Box -->
                 <a href="https://app.hackthebox.com/profile/1472413" target="_blank" rel="noopener noreferrer" 
-                   class="social-link" style="background-color: #9fef00;" 
+                   class="w-12 h-12 bg-[#9fef00] rounded-lg flex items-center justify-center text-black hover:scale-110 transition-transform duration-200" 
                    aria-label="Hack The Box Profile">
                     <svg width="20" height="22" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M22.51 6.457l.001-.013a.9.9 0 0 0-.271-.638l-.027-.024q-.028-.025-.057-.048q-.03-.022-.06-.04l-.029-.02l-9.61-5.547a.89.89 0 0 0-.922.004L1.933 5.674l-.03.02l-.023.014l-.02.015a1 1 0 0 0-.147.134l-.003.003a.9.9 0 0 0-.221.584v.014l-.001.027v11.07c0 .328.18.63.469.784l9.599 5.542l.023.011a1 1 0 0 0 .166.07l.04.01l.072.015l.035.006a.8.8 0 0 0 .216 0q.018-.002.035-.006l.072-.014l.04-.012l.064-.022a1 1 0 0 0 .102-.047l.023-.011l9.599-5.542a.89.89 0 0 0 .469-.784V6.478zM5.255 6.082l6.537-3.774a.42.42 0 0 1 .418 0l6.537 3.774a.418.418 0 0 1 0 .725l-6.537 3.774a.42.42 0 0 1-.418 0L5.254 6.807a.418.418 0 0 1 0-.725m5.614 14.345a.417.417 0 0 1-.626.361l-6.524-3.766a.42.42 0 0 1-.209-.361V9.127a.417.417 0 0 1 .626-.361l6.524 3.766a.42.42 0 0 1 .209.362zm9.623-3.766a.42.42 0 0 1-.209.36l-6.524 3.767a.417.417 0 0 1-.626-.36v-7.533c0-.15.08-.287.209-.362l6.524-3.766a.417.417 0 0 1 .626.36z"/>
@@ -99,7 +250,7 @@
                 
                 <!-- TryHackMe -->
                 <a href="https://tryhackme.com/p/LangeManV1" target="_blank" rel="noopener noreferrer" 
-                   class="social-link" style="background-color: #c11111;" 
+                   class="w-12 h-12 bg-[#c11111] rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" 
                    aria-label="TryHackMe Profile">
                     <svg width="20" height="22" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5a4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.761a3.273 3.273 0 0 1-3.27-3.27A3.273 3.273 0 0 1 6.59 7.08a.625.625 0 0 0 .7-1.035a4.5 4.5 0 0 0-1.68-.69a5.22 5.22 0 0 1 5.096-4.104a5.22 5.22 0 0 1 5.174 4.57a5 5 0 0 0-.488.305a.625.625 0 1 0 .731 1.013a3.25 3.25 0 0 1 1.912-.616a3.28 3.28 0 0 1 3.203 2.61a.625.625 0 0 0 1.225-.251a4.53 4.53 0 0 0-4.428-3.61a4.5 4.5 0 0 0-.958.105C16.556 2.328 13.9 0 10.705 0"/>
@@ -108,20 +259,71 @@
             </div>
             
             <div class="text-center">
-                <p style="color: var(--text-secondary); margin: 0;">
+                <p class="text-text-secondary mb-2">
                     &copy; <span id="current-year"></span> 
-                    <a href="https://twanterstappen.nl/" style="color: var(--primary-blue); text-decoration: none;">
+                    <a href="https://twanterstappen.nl/" class="text-primary-blue hover:text-accent-cyan no-underline">
                         Twan Terstappen
                     </a>. All rights reserved.
                 </p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+                <p class="text-text-muted text-sm">
                     Logos and trademarks used on this site are property of their respective owners.
                 </p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+    <!-- Scripts loaded at bottom for better performance -->
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}" defer></script>
+    <script defer>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuContent = menu.querySelector('div');
+            
+            if (menu.style.maxHeight === '0px' || !menu.style.maxHeight) {
+                // Open menu
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                setTimeout(() => {
+                    menuContent.style.opacity = '1';
+                    menuContent.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                // Close menu
+                menuContent.style.opacity = '0';
+                menuContent.style.transform = 'translateY(-16px)';
+                setTimeout(() => {
+                    menu.style.maxHeight = '0px';
+                }, 200);
+            }
+        }
+        
+        // Handle resize to ensure mobile menu is properly hidden/shown
+        window.addEventListener('resize', function() {
+            const menu = document.getElementById('mobile-menu');
+            const menuContent = menu.querySelector('div');
+            
+            if (window.innerWidth >= 768) { // md breakpoint
+                menu.style.maxHeight = '';
+                menuContent.style.opacity = '';
+                menuContent.style.transform = '';
+            }
+        });
+        
+        // Lazy load images for better performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+    </script>
 </body>
 </html>
