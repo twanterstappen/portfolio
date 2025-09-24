@@ -1,4 +1,4 @@
-/* Import Google Fonts */
+/* Import Google Fonts with optimized loading */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -17,6 +17,31 @@
   --text-muted: #6a6a6a;
   --font-primary: 'Inter', sans-serif;
   scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy loading styles */
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy:not([src]) {
+  visibility: hidden;
+}
+
+.lazy[src] {
+  opacity: 1;
+  visibility: visible;
 }
 
 body {
