@@ -1,12 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Portfolio{% endblock %}
+{% block title %}Coming Soon{% endblock %}
 {% block content %}
 
-<header class="container header d-flex align-items-center justify-content-center" style="margin-top: -7rem;">
-    <div class="row w-100 d-flex align-items-stretch justify-content-center flex-wrap mb-3 text-end">
-
-            <h1 class="text-center" style="margin-top: -3rem;">Coming Soon</h1>
-            
+<section class="min-h-screen flex items-center justify-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-card-bg rounded-2xl p-12 border border-border-color">
+            <div class="w-24 h-24 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <i class="fas fa-clock text-white text-4xl"></i>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-blue to-accent-cyan bg-clip-text text-transparent mb-6">Coming Soon</h1>
+            <p class="text-xl text-text-secondary mb-8">This page is under construction. Check back soon for updates!</p>
+            <a href="/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-blue to-accent-cyan text-white font-medium rounded-lg hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl">
+                <i class="fas fa-home mr-2"></i>
+                Back to Home
+            </a>
+        </div>
     </div>
-</header>
+</section>
 {% endblock %}

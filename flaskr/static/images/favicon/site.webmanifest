@@ -1,1 +1,31 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+    "name": "Twan Terstappen - Ethical Hacker & Cybersecurity specialist",
+    "short_name": "Twan Terstappen",
+    "description": "Portfolio of Twan Terstappen, award-winning ethical hacker and cybersecurity specialist in penetration testing and vulnerability assessment.",
+    "icons": [
+        {
+            "src": "/static/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0066ff",
+    "background_color": "#0a0a0a",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "en",
+    "categories": ["portfolio", "cybersecurity", "technology"],
+    "screenshots": [
+        {
+            "src": "/static/images/headshot-foto-Twan.jpg",
+            "sizes": "640x640",
+            "type": "image/jpeg"
+        }
+    ]
+}

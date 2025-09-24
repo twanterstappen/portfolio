@@ -1,78 +1,96 @@
 {% extends "base.html" %}
+
 {% block title %}Portfolio{% endblock %}
+
+{% block meta_description %}Twan Terstappen - Professional Ethical Hacker and Cybersecurity Expert. Award-winning penetration tester with expertise in vulnerability assessment, security research, and cybersecurity consulting.{% endblock %}
+
+{% block meta_keywords %}Twan Terstappen, ethical hacker, cybersecurity expert, penetration tester, vulnerability assessment, security research, HALON winner, information security consultant{% endblock %}
+
+{% block og_title %}Twan Terstappen - Ethical Hacker & Cybersecurity Expert{% endblock %}
+{% block og_description %}Professional cybersecurity expert and ethical hacker specializing in penetration testing and vulnerability assessment. Award-winning security researcher.{% endblock %}
+
+{% block twitter_title %}Twan Terstappen - Ethical Hacker & Cybersecurity Expert{% endblock %}
+{% block twitter_description %}Professional cybersecurity expert and ethical hacker specializing in penetration testing and vulnerability assessment. Award-winning security researcher.{% endblock %}
+
 {% block content %}
 
-<header class="header">
-    <div class="container">
-        <div class="hero-content fade-in-up">
-            <div class="hero-text">
-                <h1 class="hero-title">Twan Terstappen</h1>
-                <p class="hero-subtitle">Ethical Hacker & Cybersecurity Expert</p>
-                <p class="hero-description">
+<header class="min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center animate-fade-in-up">
+            <div class="space-y-8 text-center lg:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight">Twan Terstappen</h1>
+                <p class="text-lg sm:text-xl text-accent-cyan font-medium" role="doc-subtitle">Ethical Hacker & Cybersecurity Expert</p>
+                <p class="text-base sm:text-lg text-text-secondary leading-relaxed">
                     Passionate about discovering vulnerabilities and strengthening digital security. 
                     Award-winning penetration tester with expertise in advanced vulnerability assessment 
                     and security research.
                 </p>
-                <div class="hero-buttons">
-                    <a href="/achievements" class="btn-primary">
-                        <i class="fas fa-trophy"></i>
+                <nav class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" aria-label="Main actions">
+                    <a href="/achievements" class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-blue to-accent-cyan text-white font-medium rounded-lg hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl" aria-describedby="achievements-desc">
+                        <i class="fas fa-trophy mr-2" aria-hidden="true"></i>
                         View Achievements
                     </a>
-                    <a href="/get-in-touch" class="btn-secondary">
-                        <i class="fas fa-envelope"></i>
+                    <span id="achievements-desc" class="sr-only">View my cybersecurity awards and recognitions</span>
+                    <a href="/get-in-touch" class="inline-flex items-center justify-center px-6 py-3 border-2 border-accent-cyan text-accent-cyan font-medium rounded-lg hover:bg-accent-cyan hover:text-primary-dark transform transition-all duration-200" aria-describedby="contact-desc">
+                        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
                         Get In Touch
                     </a>
-                </div>
+                    <span id="contact-desc" class="sr-only">Contact me for cybersecurity consulting</span>
+                </nav>
             </div>
-            <div class="hero-image">
-                <div class="image-background"></div>
-                <img src="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" 
-                     alt="Twan Terstappen - Ethical Hacker" 
-                     class="profile-image" />
+            <div class="relative flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-full blur-3xl opacity-20 animate-pulse" aria-hidden="true"></div>
+                    <img src="{{ url_for('static', filename='images/headshot-foto-Twan.jpg') }}" 
+                         alt="Professional headshot of Twan Terstappen, ethical hacker and cybersecurity expert" 
+                         class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-accent-cyan shadow-2xl"
+                         width="384" height="384"
+                         loading="eager"
+                         fetchpriority="high" />
+                </div>
             </div>
         </div>
     </div>
 </header>
 
 <!-- Skills Section -->
-<section class="container">
-    <h2 class="section-title text-gradient">Core Expertise</h2>
-    <p class="section-subtitle">Areas where I excel in cybersecurity and ethical hacking</p>
-    
-    <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card fade-in-up">
-                <div class="d-flex align-items-center mb-3">
-                    <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                        <i class="fas fa-bug" style="color: white; font-size: 1.5rem;"></i>
-                    </div>
-                    <h4 style="margin: 0; color: var(--text-primary);">Vulnerability Assessment</h4>
-                </div>
-                <p style="color: var(--text-secondary); margin: 0;">Identifying and analyzing security vulnerabilities across multiple platforms and systems.</p>
-            </div>
-        </div>
+<section class="py-20 bg-secondary-dark/50" aria-labelledby="expertise-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-16">
+            <h2 id="expertise-heading" class="text-4xl font-bold bg-gradient-to-r from-primary-blue to-accent-cyan bg-clip-text text-transparent mb-4">Core Expertise</h2>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto">Areas where I excel in cybersecurity and ethical hacking</p>
+        </header>
         
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card fade-in-up" style="animation-delay: 0.2s;">
-                <div class="d-flex align-items-center mb-3">
-                    <div style="width: 50px; height: 50px; background: var(--gradient-accent); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                        <i class="fas fa-shield-alt" style="color: white; font-size: 1.5rem;"></i>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Core expertise areas">
+            <article class="bg-card-bg rounded-2xl p-8 border border-border-color hover:border-accent-cyan/50 transition-all duration-300 animate-fade-in-up" role="listitem">
+                <header class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-xl flex items-center justify-center mr-4" aria-hidden="true">
+                        <i class="fas fa-bug text-white text-xl"></i>
                     </div>
-                    <h4 style="margin: 0; color: var(--text-primary);">Penetration Testing</h4>
+                    <h3 class="text-xl font-semibold text-text-primary">Vulnerability Assessment</h3>
+                </header>
+                <p class="text-text-secondary leading-relaxed">Identifying and analyzing security vulnerabilities across multiple platforms and systems.</p>
+            </article>
+            
+            <article class="bg-card-bg rounded-2xl p-8 border border-border-color hover:border-accent-cyan/50 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s;" role="listitem">
+                <header class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-accent-green to-accent-cyan rounded-xl flex items-center justify-center mr-4" aria-hidden="true">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-primary">Penetration Testing</h3>
+                </header>
                 </div>
-                <p style="color: var(--text-secondary); margin: 0;">Comprehensive security testing to identify weaknesses before malicious actors can exploit them.</p>
+                <p class="text-text-secondary leading-relaxed">Comprehensive security testing to identify weaknesses before malicious actors can exploit them.</p>
             </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card fade-in-up" style="animation-delay: 0.4s;">
-                <div class="d-flex align-items-center mb-3">
-                    <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                        <i class="fas fa-search" style="color: white; font-size: 1.5rem;"></i>
+            
+            <div class="bg-card-bg rounded-2xl p-8 border border-border-color hover:border-accent-cyan/50 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-search text-white text-xl"></i>
                     </div>
-                    <h4 style="margin: 0; color: var(--text-primary);">Security Research</h4>
+                    <h4 class="text-xl font-semibold text-text-primary">Security Research</h4>
                 </div>
-                <p style="color: var(--text-secondary); margin: 0;">Research in emerging threats and innovative security methodologies.</p>
+                <p class="text-text-secondary leading-relaxed">Research in emerging threats and innovative security methodologies.</p>
             </div>
         </div>
     </div>

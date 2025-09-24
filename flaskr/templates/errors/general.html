@@ -1,15 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Error{% endblock %}
+
+{% block title %}{% if g.error_code %}{{ g.error_code }} - {% endif %}Error{% endblock %}
+
+{% block meta_description %}Error page - The requested page could not be found on Twan Terstappen's portfolio website. Return to homepage to explore cybersecurity expertise.{% endblock %}
+
+{% block meta_keywords %}404 error, page not found, Twan Terstappen, portfolio{% endblock %}
 
 {% block content %}
-    <h1>Error</h1>
-    {{ g.error }}
-    {% if g.path %}
-    <br><br>
-        You tried to access:
-        {{ g.path }}
-        <br>
-        Go back to <a class="text-white" href="/">home page</a>
-    {% endif %}
-
+<main class="min-h-screen flex items-center justify-center" role="main">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <article class="bg-card-bg rounded-2xl p-12 border border-border-color">
+            <div class="w-20 h-20 bg-gradient-to-r from-accent-red to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+                <i class="fas fa-exclamation-triangle text-white text-3xl"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-text-primary mb-4">{% if g.error_code %}{{ g.error_code }} - {% endif %}Error</h1>
+            <p class="text-lg text-text-secondary mb-6">{{ g.error or "The page you are looking for cannot be found." }}</p>
+            {% if g.path %}
+            <div class="bg-accent-dark rounded-lg p-4 mb-6">
+                <p class="text-text-muted mb-2">You tried to access:</p>
+                <p class="text-accent-cyan font-mono">{{ g.path }}</p>
+            </div>
+            {% endif %}
+            <nav aria-label="Error page navigation">
+                <a href="/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-blue to-accent-cyan text-white font-medium rounded-lg hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl" aria-describedby="home-desc">
+                    <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                    Return Home
+                </a>
+                <span id="home-desc" class="sr-only">Return to Twan Terstappen's homepage</span>
+            </nav>
+        </article>
+    </div>
+</main>
+                Go back to home page
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock %}
