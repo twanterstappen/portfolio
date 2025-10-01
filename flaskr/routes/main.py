@@ -1,5 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, request, g, make_response
 from datetime import datetime
+import os
+# from models import db, Project, BlogPost  # Import database and modelsask import Blueprint, render_template, redirect, url_for, request, g, make_response, flash
+import os
 # from models import db, Project, BlogPost  # Import database and models
 
 bp = Blueprint('main', __name__)
@@ -24,6 +27,13 @@ def any(any):
 @bp.route('/achievements')
 def achievements():
     return render_template('achievements.html')
+
+
+@bp.route('/contact')
+@bp.route('/get-in-touch')
+def contact():
+    """Contact page with mailto: form"""
+    return render_template('contact.html')
 
 
 @bp.route('/coming-soon')
