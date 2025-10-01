@@ -68,8 +68,8 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-text-primary mb-1">Email</h3>
-                                <a href="mailto:twan@twanterstappen.com" class="text-accent-cyan hover:text-accent-green transition-colors duration-200">
-                                    twan@twanterstappen.com
+                                <a href="mailto:info@twanterstappen.nl" class="text-accent-cyan hover:text-accent-green transition-colors duration-200">
+                                    info@twanterstappen.nl
                                 </a>
                                 <p class="text-sm text-text-muted">I typically respond within 24-48 hours</p>
                             </div>
@@ -170,14 +170,14 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const enhancedSubject = `[Portfolio Contact] Message from ${name}`;
     
     // Create mailto link
-    const mailtoLink = `mailto:twan@twanterstappen.com?subject=${encodeURIComponent(enhancedSubject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:info@twanterstappen.nl?subject=${encodeURIComponent(enhancedSubject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Open email client
     window.location.href = mailtoLink;
     
     // Optional: Show success message
     setTimeout(() => {
-        alert('Your email client should now open with the pre-filled message. If it doesn\'t open automatically, please copy the information and send it manually to twan@twanterstappen.com');
+        alert('Your email client should now open with the pre-filled message. If it doesn\'t open automatically, please copy the information and send it manually to info@twanterstappen.nl');
     }, 500);
 });
 </script>
