@@ -26,6 +26,13 @@ def achievements():
     return render_template('achievements.html')
 
 
+@bp.route('/contact')
+@bp.route('/get-in-touch')
+def contact():
+    """Contact page with mailto: form"""
+    return render_template('contact.html')
+
+
 @bp.route('/coming-soon')
 def coming_soon():
     return render_template('coming-soon.html')

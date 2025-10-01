@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block meta_description %}Contact Twan Terstappen for cybersecurity consulting, penetration testing services, or security research collaboration. Get in touch for professional cybersecurity expertise.{% endblock %}
+
+{% block meta_keywords %}contact Twan Terstappen, cybersecurity consulting, penetration testing services, security consultation, ethical hacking services{% endblock %}
+
+{% block og_title %}Contact Twan Terstappen - Cybersecurity Expert{% endblock %}
+{% block og_description %}Get in touch with Twan Terstappen for cybersecurity consulting, penetration testing, and security research services.{% endblock %}
+
+{% block twitter_title %}Contact Twan Terstappen - Cybersecurity Expert{% endblock %}
+{% block twitter_description %}Get in touch with Twan Terstappen for cybersecurity consulting, penetration testing, and security research services.{% endblock %}
+
+{% block content %}
+
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-blue to-accent-cyan bg-clip-text text-transparent mb-4">Get In Touch</h1>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto">Want to speak to me? You can contact me through email and LinkedIn. I'd love to hear from you!</p>
+        </header>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-card-bg rounded-2xl p-8 border border-border-color">
+                <h2 class="text-2xl font-bold text-text-primary mb-6">Send a Message</h2>
+                
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-text-primary mb-2">Full Name *</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-3 bg-accent-dark border border-border-color rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all duration-200"
+                               placeholder="Your full name">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 bg-accent-dark border border-border-color rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all duration-200"
+                               placeholder="your.email@example.com">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-text-primary mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="6" required 
+                                  class="w-full px-4 py-3 bg-accent-dark border border-border-color rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all duration-200 resize-vertical"
+                                  placeholder="Tell me about your project or question..."></textarea>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-primary-blue to-accent-cyan text-white font-medium py-3 px-6 rounded-lg hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Open Email App
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-color">
+                    <h2 class="text-2xl font-bold text-text-primary mb-6">Contact Information</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-text-primary mb-1">Email</h3>
+                                <a href="mailto:info@twanterstappen.nl" class="text-accent-cyan hover:text-accent-green transition-colors duration-200">
+                                    info@twanterstappen.nl
+                                </a>
+                                <p class="text-sm text-text-muted">I typically respond within 24-48 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-accent-green to-accent-cyan rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-linkedin text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-text-primary mb-1">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/twanterstappen/" target="_blank" class="text-accent-cyan hover:text-accent-green transition-colors duration-200">
+                                    linkedin.com/in/twanterstappen
+                                </a>
+                                <p class="text-sm text-text-muted">Professional networking and updates</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-primary-blue to-accent-cyan rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-github text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-text-primary mb-1">GitHub</h3>
+                                <a href="https://github.com/twanterstappen" target="_blank" class="text-accent-cyan hover:text-accent-green transition-colors duration-200">
+                                    github.com/twanterstappen
+                                </a>
+                                <p class="text-sm text-text-muted">Open source projects and research</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Validate required fields
+    if (!name || !email || !message) {
+        alert('Please fill in all required fields (Name, Email, and Message).');
+        return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Get current date and time
+    const now = new Date();
+    const timestamp = now.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+    });
+    
+    // Build enhanced email body
+    let emailBody = `Hello Twan,\n\n`;
+    emailBody += `I hope this message finds you well. My name is ${name}, and I'm reaching out to connect with you.\n\n`;
+    
+    // Add main message
+    emailBody += `MESSAGE:\n`;
+    emailBody += `════════\n`;
+    emailBody += `${message}\n\n`;
+    
+    // Add contact information section
+    emailBody += `CONTACT INFORMATION:\n`;
+    emailBody += `══════════════════════\n`;
+    emailBody += `Name: ${name}\n`;
+    emailBody += `Email: ${email}\n`;
+    emailBody += `Inquiry Date: ${timestamp}\n\n`;
+    
+    // Add professional closing
+    emailBody += `Thank you for your time and consideration. I look forward to hearing from you and discussing this opportunity further.\n\n`;
+    emailBody += `Best regards,\n${name}\n\n`;
+    
+    // Add footer
+    emailBody += `---\n`;
+    emailBody += `This message was sent via the contact form on twanterstappen.com\n`;
+    emailBody += `Please reply directly to this email address: ${email}`;
+    
+    // Create subject line
+    const enhancedSubject = `[Portfolio Contact] Message from ${name}`;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:info@twanterstappen.nl?subject=${encodeURIComponent(enhancedSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Optional: Show success message
+    setTimeout(() => {
+        alert('Your email client should now open with the pre-filled message. If it doesn\'t open automatically, please copy the information and send it manually to info@twanterstappen.nl');
+    }, 500);
+});
+</script>
+
+{% endblock %}
